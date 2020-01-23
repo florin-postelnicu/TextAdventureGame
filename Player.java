@@ -13,6 +13,10 @@ public class Player {
         name = n;
     }
 
+    public Player() {
+
+    }
+
     public void PlayerHealth(int h){
         health= h;
     }
@@ -29,5 +33,15 @@ public class Player {
 
     public int GetDamage(){
         return damage;
+    }
+
+    public void TakeDamage(int d){
+        health -= d;
+    }
+    public int Attack(){
+        return damage;
+    }
+    public void GainHealth(int z){
+        health +=z;
     }
 }
