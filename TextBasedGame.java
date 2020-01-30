@@ -66,16 +66,31 @@ public class TextBasedGame {
                     System.out.println("1");
                 }
                 else if( input1.equals("2")) {
+                    if(helthPotNum >0){
+                        System.out.println("\tYou drink a health potion, healing you for "+ healthPotHealing+ " HP !");
+                        p1.GainHealth(healthPotHealing);
+                        System.out.println("\tyou now have  " + p1.GetHealth() + " HP!");
+                        helthPotNum -- ;
+                        System.out.println("\tyou now have " + helthPotNum + " health potions remaining! \n");
+
+                    }
+                    else{
+                        System.out.println("\tyou don't have any more health potions, slay enemies to have a chance at getting more health potions");
+                    }
                     System.out.println("2");
                 }
                 else if(input1.equals("3")) {
                     System.out.println("3");
-                    System.out.println("\tUou exit the Dungeon and finish your adventure. Thx 4 playing!");
+                    p1.PlayerHealth(0);
+                    System.out.println("\tYou exit the Dungeon and finish your adventure. Thx 4 playing!");
+                    running = false;
                 }
 
 
         }
         }while(running);
+
+        System.out.println("THX!");
 
 
         }
